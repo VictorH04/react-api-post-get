@@ -1,8 +1,14 @@
-const Nav = () => {
+import { Link } from "react-router-dom";
+import "../SASS/base/_Nav.scss";
+
+const Nav = ({title, about}) => {
     return (
-        <div>
-            <h1>Hei fra Nav</h1>
-        </div>
+        <nav className="Nav">
+            <h2 className="Nav-name">{title}</h2>
+            <Link className="Nav-about" to="/about">
+                <h2 className="Nav-about">{about}</h2>
+            </Link>
+        </nav>
     )
 }
 

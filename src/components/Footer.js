@@ -1,8 +1,12 @@
+import "../SASS/base/_Footer.scss";
+
 const Footer = () => {
     return (
-        <div>
-            <footer>Hei fra Footer</footer>
-        </div>
+        <>
+        <footer className="Footer">
+            <h2 className="Footer-value">(value) cards</h2>
+        </footer>
+        </>
     )
 }
 

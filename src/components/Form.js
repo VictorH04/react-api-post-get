@@ -1,3 +1,5 @@
+import "../SASS/base/_Footer.scss";
+
 const Form = () => {
     return (
         <div>

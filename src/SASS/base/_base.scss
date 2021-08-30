@@ -1,6 +1,23 @@
 /* ===== Universal Things ===== */
 
 :root {
+    --Gunmetal: #202c39;
+    --Charcoal: #283845;
+    --Sage: #b8b08d;
+    --Champagne: #f2d492;
+    --alabaster: #E8EDDF;
+    --Tangerine: #f29559;
+    --Tangerine2: #bb6b36;
+    --dark-blue-1: #001233;
+    --dark-blue-2: #0f2b5f;
+    --lightBlue: #2980b9;
+    --independece: #33415C;
+    --black-coral: #5C677D;
+    --roman-silver-1: #7D8597;
+    --roman-silver-2: #8990A0;
+    --jet-black-1: #333533;
+    --jet-black-2: #242423;
+
     //* FONT-SIZES
     --fs-heading-big: 4rem;
     --fs-heading: 3rem;
@@ -33,10 +50,12 @@ body {
     // min-width: 100vw;
     // display: grid;
     // place-items: center;
-    overflow-x: hidden;
+    overflow: hidden;
     // overflow-y: scroll;
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
+
+    background-color: #5C677D;
 }
 
 .overflow {

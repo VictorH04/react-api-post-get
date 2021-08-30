@@ -1,0 +1,25 @@
+.Nav {
+    top: 0;
+    height: 10rem;
+    width: 100vw;
+    background-color: var(--Charcoal);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+
+    &-name {
+        font-size: 3.5rem;
+        font-weight: 300;
+        color: #fff;
+    }
+
+    &-about {
+        font-size: 3.5rem;
+        font-weight: 300;
+        text-decoration: underline;
+        color: #fff;
+    }
+}
