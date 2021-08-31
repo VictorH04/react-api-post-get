@@ -1,0 +1,60 @@
+.Form {
+    place-self: center;    
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    &-PostTitle {
+        font-size: var(--fs-text);
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 2rem;
+
+        color: #fff;
+
+        &--inputTitle {
+            font-size: var(--fs-text-big);
+            font-family: 'Roboto', sans-serif;
+            
+            margin-top: 1rem;
+
+            padding: .5rem;
+        }
+    }
+
+    &-PostBody {
+        font-size: var(--fs-text);
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 2rem;
+
+        color: #fff;
+        
+
+        &--inputBody {
+            font-size: var(--fs-text-big);
+            font-family: 'Roboto', sans-serif;
+            
+            margin-top: 1rem;
+        }
+    }
+
+    &-btn {
+        font-size: var(--fs-text-big);
+
+        width: 100%;
+        padding: 1rem 0rem;
+    }
+}
+
+textarea {
+    height: 70px;
+
+    padding: .5rem;
+}

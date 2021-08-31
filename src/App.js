@@ -44,7 +44,7 @@ function App() {
   const handleSubmit = async () => {
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
     const dateTime = format(new Date(), "MMMM dd, yyyy pp");
-    const newPost = { id, title: postTitle, dateTime, body: postBody };
+    const newPost = { id, title: postTitle, dateTime, text: postBody };
 
     try {
       const response = await api.post("/posts", newPost);
@@ -82,7 +82,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <Footer />
+      <Footer cardsLength={posts} />
     </>
   );
 }

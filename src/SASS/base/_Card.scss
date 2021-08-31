@@ -1,0 +1,57 @@
+.cardContainer {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-auto-rows: minmax(50px, 200px);
+
+    gap: 2rem;
+
+    place-content: center;
+    place-items: center;
+
+    &-inside {
+        padding: 2rem;
+        text-align: center;
+
+        background-color: #f2f0e6;
+
+        height: 100%;
+        width: 100%;
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+        transition: all ease-in-out .2s;
+    }
+
+    &-inside:hover {
+        transform: translateY(-1.5rem);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    &--cardTitle {
+        font-weight: 600;
+        font-size: var(--fs-title);
+        text-decoration: none;
+    }
+
+    &--cardDate {
+        text-decoration: none;
+        font-size: var(--fs-text);
+        padding: 2rem;
+
+        margin-top: 1rem;
+    }
+
+    &--cardText {
+        text-decoration: none;
+        font-size: var(--fs-text);
+
+        margin-top: 1rem;
+        text-align: left;
+    }
+
+    &--link {
+        text-decoration: none;
+        color: #000;
+    }
+}
