@@ -6,6 +6,8 @@
 
     align-items: center;
 
+    grid-row: 1 / 1;
+
     &-PostTitle {
         font-size: var(--fs-text);
 
@@ -46,6 +48,7 @@
     }
 
     &-btn {
+        cursor: pointer;
         font-size: var(--fs-text-big);
 
         width: 100%;

@@ -1,0 +1,43 @@
+.PostPage {
+    grid-row: 1 / span 2;
+    grid-column: 1 / 1;
+    place-self: center;
+
+    display: grid;
+    grid-template-columns: minmax(100px, 800px);
+    
+    
+    &-post {
+        text-align: center;
+        padding: 2rem 0rem 4rem 0rem;
+
+        background-color: #f2f0e6;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+        &--title {
+            font-size: var(--fs-heading);
+            margin-top: 2rem;
+        }
+
+        &--time {
+            margin-top: 2rem;
+            font-size: var(--fs-text);
+            font-weight: 300;
+        }
+
+        &--text {
+            margin-top: 2rem;
+            font-size: var(--fs-text-big);
+            padding: 0rem 2rem;
+        }
+
+        &--btn {
+            cursor: pointer;
+            margin-top: 2rem;
+            font-size: var(--fs-text-big);
+
+            padding: 2rem 4rem;
+        }
+    }
+
+}

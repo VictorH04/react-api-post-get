@@ -8,7 +8,7 @@ const Card = ({ card }) => {
                 <Link className="cardContainer--link" to={`posts/${card.id}`}>
                     <h2 className="cardContainer--cardTitle">{card.title}</h2>
                     <p className="cardContainer--cardDate">{card.dateTime}</p>
-                    <p className="cardContainer--cardText">{card.text.length <= 35 ? card.text : `${card.text.slice(0, 35)}...`}</p>
+                    <p className="cardContainer--cardText">{card.text.length <= 55 ? card.text : `${card.text.slice(0, 55)}...`}</p>
                 </Link>
             </div>
     )

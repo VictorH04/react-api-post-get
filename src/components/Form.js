@@ -3,20 +3,20 @@ import "../SASS/base/_Form.scss";
 const Form = ({handleSubmit, postTitle, setPostTitle, postBody, setPostBody}) => {
     return (
         <form className="Form" onSubmit={handleSubmit}>
-            <label htmlFor="PostTitle" className="Form-PostTitle">
-                Post Title
+            <label htmlFor="CardTitle" className="Form-PostTitle">
+                Card Title
                 <input
-                    id="PostTitle"
+                    id="CardTitle"
                     required
                     className="Form-PostTitle--inputTitle"
                     value={postTitle}
                     onChange={(e) => setPostTitle(e.target.value)}
                  />
             </label>
-            <label htmlFor="PostBody" className="Form-PostBody">
-                Post Body
+            <label htmlFor="CardBody" className="Form-PostBody">
+                Card Text
                 <textarea
-                    id="PostBody"
+                    id="CardBody"
                     required
                     className="Form-PostBody--inputBody"
                     value={postBody}

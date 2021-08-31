@@ -59,12 +59,32 @@ function App() {
     }
   };
 
+  const handleDelete = async (id) => {
+    try {
+      await api.delete(`/posts/${id}`);
+      const cardsList = posts.filter((card) => card.id !== id);
+      setPosts(cardsList);
+      history.push("/");
+    } catch (err) {
+      console.log(err.message);
+    }
+
+    console.log(id);
+  };
+
   return (
     <>
       <Nav title="Victor's cool app!" about="About" />
       <div className="Home">
         <Switch>
           <Route exact path="/">
+            {posts.length >= 1 ? (
+              <>
+                <Feed cards={posts} />
+              </>
+            ) : (
+              <p>Please submit a card!</p>
+            )}
             <Form
               handleSubmit={handleSubmit}
               setPostBody={setPostBody}
@@ -72,10 +92,9 @@ function App() {
               postBody={postBody}
               postTitle={postTitle}
             />
-            <Feed cards={posts} />
           </Route>
-          <Route path="/post/:id">
-            <PostPage />
+          <Route path="/posts/:id">
+            <PostPage cards={posts} handleDelete={handleDelete} />
           </Route>
           <Route exact path="/about">
             <About />

@@ -1,13 +1,15 @@
 .cardContainer {
     width: 100vw;
     display: grid;
-    grid-template-columns: repeat(4, 300px);
+    grid-template-columns: repeat(auto-fill, 400px);
     grid-auto-rows: minmax(50px, 200px);
 
     gap: 2rem;
 
     place-content: center;
     place-items: center;
+
+    grid-row: 2 / 2;
 
     &-inside {
         padding: 2rem;
@@ -25,7 +27,7 @@
 
     &-inside:hover {
         transform: translateY(-1.5rem);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.7);
     }
 
     &--cardTitle {
@@ -47,7 +49,7 @@
         font-size: var(--fs-text);
 
         margin-top: 1rem;
-        text-align: left;
+        text-align: center;
     }
 
     &--link {
