@@ -1,25 +1,124 @@
 .Nav {
-    top: 0;
-    height: 10rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
     width: 100vw;
-    background-color: var(--Charcoal);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    height: 5rem;
+    transition: all 0.2s ease-in;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 4rem;
+    position: fixed;
 
-    &-name {
-        font-size: 3.5rem;
-        font-weight: 300;
-        color: #fff;
+    z-index: 99;
+    background-color: #fff;
+
+    &_icon {
+        place-self: center;
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+
+        transition: all 0.1s ease-in;
+        height: 3rem;
+        margin-left: .6rem;
+
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+
+        &>span {
+            width: 50px;
+            height: 3.5px;
+            background: #000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover span:nth-child(1) {
+            width: 35px;
+        }
+
+        &:hover span:nth-child(2) {
+            width: 40px;
+        }
+
+        &.active span:nth-child(1) {
+            transform-origin: center center;
+            transform: rotate(-45deg) translate(-10px, 2.5px);
+            width: 50px;
+        }
+
+        &.active span:nth-child(2) {
+            transform: translateX(10px);
+            opacity: 0;
+        }
+
+        &.active span:nth-child(3) {
+            transform-origin: center center;
+            transform: rotate(45deg) translate(-11px, -4px);
+            width: 50px;
+        }
+
+        &_line1 {
+            width: 4.2rem;
+            justify-self: end;
+        }
+
+        &_line2 {
+            margin-top: 1.5rem;
+            width: 3.5rem;
+            justify-self: end;
+        }
+
+        &_line3 {
+            margin-top: 1.5rem;
+        }
     }
 
-    &-about {
-        font-size: 3.5rem;
-        font-weight: 300;
-        text-decoration: underline;
-        color: #fff;
+
+    &-content {
+        transition: all ease-in-out .3s;
+        background-color: #fff;
+        height: 50rem;
+
+        opacity: 0;
+
+        &--about {
+            grid-column: 1 / 1;
+            grid-row: 1 / 1;
+
+            font-size: 3.5rem;
+            font-weight: 300;
+            text-decoration: underline;
+            color: #000;
+        }
     }
+
+}
+
+.activeHeight {
+    opacity: 1 !important;
+    transition: all 0.1s ease-in;
+    width: 100vw;
+    height: 50rem;
+}
+
+.slide-fade-enter-active {
+    transition: all 0.5s ease-in;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to
+
+/* .slide-fade-leave-active below version 2.1.8 */
+    {
+    padding-top: 3rem;
+    opacity: 0;
+}
+
+.wrap {
+    opacity: 0;
+    transition: all ease-in .3s;
 }

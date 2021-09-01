@@ -1,11 +1,12 @@
 import "../SASS/base/_PostPage.scss";
 import { useParams, Link } from "react-router-dom";
 
-const PostPage = ({ cards, handleDelete }) => {
+const PostPage = ({ cards, handleDelete, toHomeBtn }) => {
   const { id } = useParams();
   const card = cards.find((card) => card.id.toString() === id);
 
   return (
+    <>
     <div className="PostPage">
       <div className="PostPage-post">
         {card && (
@@ -22,9 +23,19 @@ const PostPage = ({ cards, handleDelete }) => {
             </button>
           </>
         )}
-        {!card && <></>}
+        {!card && 
+        <>
+          <h1 className="noCardText2">No card here!</h1>
+          <br />
+          <Link className="noCardLink" to="/">
+            Please return to homepage
+          </Link>
+        </>}
       </div>
+
     </div>
+    <button type="button" onClick={() => toHomeBtn()} className="toHomeBtn">&larr; Homepage</button>
+    </>
   );
 };
 

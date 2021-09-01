@@ -25,7 +25,6 @@ function App() {
         setPosts(response.data);
 
         console.log(response);
-        console.log(posts);
       } catch (err) {
         if (err.response) {
           // Not in 200 response range
@@ -72,6 +71,10 @@ function App() {
     console.log(id);
   };
 
+  const toHomeBtn = () => {
+    history.push("/");
+  }
+
   return (
     <>
       <Nav title="Victor's cool app!" about="About" />
@@ -83,7 +86,7 @@ function App() {
                 <Feed cards={posts} />
               </>
             ) : (
-              <p>Please submit a card!</p>
+              <p className="noCardText">Please submit a card!</p>
             )}
             <Form
               handleSubmit={handleSubmit}
@@ -94,7 +97,7 @@ function App() {
             />
           </Route>
           <Route path="/posts/:id">
-            <PostPage cards={posts} handleDelete={handleDelete} />
+            <PostPage toHomeBtn={toHomeBtn} cards={posts} handleDelete={handleDelete} />
           </Route>
           <Route exact path="/about">
             <About />

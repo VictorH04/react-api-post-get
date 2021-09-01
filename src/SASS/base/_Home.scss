@@ -6,3 +6,12 @@
 
     min-height: 80vh;
 }
+
+.noCardText {
+    grid-row: 2 / 2;
+    place-self: center;
+
+    font-size: var(--fs-heading-big);
+    
+    color: #fff;
+}

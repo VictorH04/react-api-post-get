@@ -39,5 +39,35 @@
             padding: 2rem 4rem;
         }
     }
+}
 
+.noCardText2 {
+    font-size: var(--fs-heading);
+}
+
+.noCardLink {
+    font-size: var(--fs-text-big);
+}
+
+.toHomeBtn {
+    margin: 2rem;
+
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+
+
+    width: 10rem;
+    height: 5rem;
+
+    cursor: pointer;
+
+    background-color: #f2f0e6;
+
+    border: solid .1rem #000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all ease-in-out .2s;
+}
+
+.toHomeBtn:hover {
+    transform: translateY(-.5rem);
 }
