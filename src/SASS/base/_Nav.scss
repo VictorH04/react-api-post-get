@@ -4,7 +4,7 @@
     grid-template-rows: 1fr;
 
     width: 100vw;
-    height: 5rem;
+    height: 7rem;
     transition: all 0.2s ease-in;
 
     position: fixed;
@@ -75,50 +75,44 @@
 
 
     &-content {
-        transition: all ease-in-out .3s;
+        position: fixed;
+        z-index: 99999999999;
+        height: 20rem;
+        width: 100vw;
         background-color: #fff;
-        height: 50rem;
+        opacity: 1;
 
-        opacity: 0;
+        margin-top: 7rem;
 
-        &--about {
-            grid-column: 1 / 1;
-            grid-row: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-            font-size: 3.5rem;
-            font-weight: 300;
-            text-decoration: underline;
-            color: #000;
+        &--ul {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+
+            gap: 3rem;
+
+            place-items: center;
+
+            &-home {
+                grid-column: 1 / 1;
+                grid-row: 1 / 1;
+
+                font-size: var(--fs-text-big);
+                text-decoration: none;
+            }
+
+            &-about {
+                grid-column: 1 / 1;
+                grid-row: 2 / 2;
+
+                font-size: var(--fs-text-big);
+                text-decoration: none;
+            }
         }
     }
 
-}
-
-.activeHeight {
-    opacity: 1 !important;
-    transition: all 0.1s ease-in;
-    width: 100vw;
-    height: 50rem;
-}
-
-.slide-fade-enter-active {
-    transition: all 0.5s ease-in;
-}
-
-.slide-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter,
-.slide-fade-leave-to
-
-/* .slide-fade-leave-active below version 2.1.8 */
-    {
-    padding-top: 3rem;
-    opacity: 0;
-}
-
-.wrap {
-    opacity: 0;
-    transition: all ease-in .3s;
 }
