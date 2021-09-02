@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 
 const Form = ({handleSubmit, postTitle, setPostTitle, postBody, setPostBody}) => {
 
+    const [activeForm, setActiveForm] = useState(true);
 
-    const transition = useTransition(handleSubmit, {
+    const transition = useTransition(activeForm, {
         from: { y: -300, opacity: 0 },
         enter: { y: 0, opacity: 1 },
         leave: { x: 0, opacity: 1 },

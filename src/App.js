@@ -14,6 +14,11 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [postBody, setPostBody] = useState("");
   const [postTitle, setPostTitle] = useState("");
+  const [aboutTitle, setAboutTitle] = useState([]);
+  const [aboutText, setAboutText] = useState([]);
+  const [aboutPortfolio, setAboutPortfolio] = useState([]);
+  const [aboutGithub, setAboutGithub] = useState([]);
+  const [aboutHomeBtn, setAboutHomeBtn] = useState([]);
 
   const history = useHistory();
 
@@ -37,7 +42,38 @@ function App() {
       }
     };
 
+    const fetchAbout = async () => {
+      try {
+        const response = await api.get("/about");
+
+        const aboutItems = await response.data;
+        const aboutTitle = aboutItems.map((item) => item.title);
+        const aboutText = aboutItems.map((item) => item.text);
+        const aboutPortfolio = aboutItems.map((item) => item.portfolioLink);
+        const aboutGithub = aboutItems.map((item) => item.githubLink);
+        const aboutHomeBtn = aboutItems.map((item) => item.backHomeBtn);
+
+        setAboutTitle(aboutTitle);
+        setAboutText(aboutText);
+        setAboutPortfolio(aboutPortfolio);
+        setAboutGithub(aboutGithub);
+        setAboutHomeBtn(aboutHomeBtn);
+
+        console.log(response.data);
+      } catch (err) {
+        if (err.response) {
+          // Not in 200 response range
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log(err.message);
+        }
+      }
+    };
+
     fetchPosts();
+    fetchAbout();
   }, []);
 
   const handleSubmit = async (e) => {
@@ -62,10 +98,10 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
+      history.push("/");
       await api.delete(`/posts/${id}`);
       const cardsList = posts.filter((card) => card.id !== id);
       setPosts(cardsList);
-      history.push("/");
     } catch (err) {
       console.log(err.message);
     }
@@ -75,7 +111,7 @@ function App() {
 
   const toHomeBtn = () => {
     history.push("/");
-  }
+  };
 
   return (
     <>
@@ -99,10 +135,20 @@ function App() {
             />
           </Route>
           <Route path="/posts/:id">
-            <PostPage toHomeBtn={toHomeBtn} cards={posts} handleDelete={handleDelete} />
+            <PostPage
+              toHomeBtn={toHomeBtn}
+              cards={posts}
+              handleDelete={handleDelete}
+            />
           </Route>
           <Route exact path="/about">
-            <About />
+            <About
+              aboutTitle={aboutTitle}
+              aboutText={aboutText}
+              aboutPortfolio={aboutPortfolio}
+              aboutGithub={aboutGithub}
+              aboutHomeBtn={aboutHomeBtn}
+            />
           </Route>
         </Switch>
       </div>
