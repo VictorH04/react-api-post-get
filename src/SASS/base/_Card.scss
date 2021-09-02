@@ -21,12 +21,10 @@
         width: 100%;
 
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-
-        transition: all ease-in-out .2s;
     }
 
     &-inside:hover {
-        transform: translateY(-1.5rem);
+        transition: all ease-in-out .2s;
         box-shadow: 0 20px 20px rgba(0, 0, 0, 0.7);
     }
 
